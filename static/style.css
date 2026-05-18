@@ -1,0 +1,261 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#0f172a;
+    overflow-y:auto;
+    color:white;
+    padding:40px 0;
+}
+
+.background{
+    position:fixed;
+    width:600px;
+    height:600px;
+    background:linear-gradient(
+        135deg,
+        #3b82f6,
+        #9333ea
+    );
+    filter:blur(120px);
+    opacity:0.35;
+    animation:move 8s infinite alternate;
+    z-index:0;
+}
+
+@keyframes move{
+
+    from{
+        transform:translate(-100px,-100px);
+    }
+
+    to{
+        transform:translate(100px,100px);
+    }
+}
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:20px;
+    z-index:10;
+}
+
+.card{
+    width:500px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:30px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 10px 40px rgba(0,0,0,0.4);
+    position:relative;
+    z-index:10;
+}
+
+.header .icon{
+    width:90px;
+    height:90px;
+    margin:auto;
+    margin-bottom:25px;
+    border-radius:50%;
+    background:linear-gradient(
+        135deg,
+        #3b82f6,
+        #9333ea
+    );
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:40px;
+    box-shadow:0 10px 25px rgba(59,130,246,0.4);
+}
+
+h1{
+    font-size:50px;
+    margin-bottom:12px;
+    font-weight:bold;
+}
+
+.header p{
+    color:#cbd5e1;
+    margin-bottom:35px;
+    font-size:18px;
+    line-height:1.5;
+}
+
+.upload-area{
+    width:100%;
+    height:200px;
+    border:2px dashed rgba(255,255,255,0.2);
+    border-radius:25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    transition:0.3s;
+    margin-bottom:30px;
+    background:rgba(255,255,255,0.03);
+}
+
+.upload-area:hover{
+    background:rgba(255,255,255,0.05);
+    transform:scale(1.02);
+    border-color:#60a5fa;
+}
+
+.upload-area i{
+    font-size:60px;
+    margin-bottom:15px;
+    color:#60a5fa;
+}
+
+.upload-area span{
+    color:#cbd5e1;
+    font-size:22px;
+    font-weight:500;
+}
+
+.preview-box{
+    width:100%;
+    margin-bottom:30px;
+}
+
+.preview-box img{
+    width:100%;
+    border-radius:25px;
+    display:none;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    transition:0.3s;
+}
+
+.preview-box img:hover{
+    transform:scale(1.01);
+}
+
+button{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:18px;
+    background:linear-gradient(
+        135deg,
+        #3b82f6,
+        #9333ea
+    );
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:bold;
+    box-shadow:0 10px 20px rgba(59,130,246,0.3);
+}
+
+button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(59,130,246,0.5);
+}
+
+button i{
+    margin-right:10px;
+}
+
+#loading{
+    margin-top:30px;
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+}
+
+.spinner{
+    width:50px;
+    height:50px;
+    border:5px solid rgba(255,255,255,0.2);
+    border-top:5px solid #60a5fa;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+#loading span{
+    color:#cbd5e1;
+    font-size:18px;
+}
+
+#result{
+    margin-top:35px;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.05);
+    display:none;
+    animation:fadeIn 0.5s ease;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+#predictionText{
+    font-size:38px;
+    margin-bottom:15px;
+    color:#ffffff;
+    text-transform:capitalize;
+}
+
+#confidenceText{
+    color:#cbd5e1;
+    font-size:20px;
+}
+
+@media(max-width:600px){
+
+    .card{
+        width:95%;
+        padding:25px;
+    }
+
+    h1{
+        font-size:36px;
+    }
+
+    .upload-area{
+        height:170px;
+    }
+
+    .upload-area span{
+        font-size:18px;
+    }
+
+    #predictionText{
+        font-size:28px;
+    }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Image Classification</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="header">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-brain"></i>
+
+            </div>
+
+            <h1>AI Image Classification</h1>
+
+            <p>
+                Upload your image and let AI detect the scene instantly
+            </p>
+
+        </div>
+
+        <label class="upload-area" for="imageInput">
+
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+            <span>Click to Upload Image</span>
+
+            <input
+                type="file"
+                id="imageInput"
+                accept="image/*"
+                hidden
+            >
+
+        </label>
+
+        <div class="preview-box">
+
+            <img id="previewImage">
+
+        </div>
+
+        <button onclick="predictImage()">
+
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            Predict Image
+
+        </button>
+
+        <div id="loading">
+
+            <div class="spinner"></div>
+
+            <span>AI is analyzing image...</span>
+
+        </div>
+
+        <div id="result">
+
+            <h2 id="predictionText"></h2>
+
+            <p id="confidenceText"></p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
