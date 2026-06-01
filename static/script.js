@@ -2,6 +2,8 @@ const imageInput = document.getElementById("imageInput");
 
 const previewImage = document.getElementById("previewImage");
 
+const uploadContent = document.getElementById("uploadContent");
+
 const loading = document.getElementById("loading");
 
 const result = document.getElementById("result");
@@ -16,6 +18,10 @@ imageInput.addEventListener("change", function(){
         previewImage.src = URL.createObjectURL(file);
 
         previewImage.style.display = "block";
+        
+        if (uploadContent) {
+            uploadContent.style.display = "none";
+        }
     }
 });
 
